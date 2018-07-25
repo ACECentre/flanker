@@ -61,28 +61,28 @@ window.test_stimuli = [{
 	image_url: 'images/ffhff.png',
 	data: {
 		correct_response: head_right_keys,
-		condition: 'incompatible',
+		condition: 'oddball-incogruent',
 		trial_id: 'stim'
 	}
 }, {
 	image_url: 'images/hhfhh.png',
 	data: {
 		correct_response: head_left_keys,
-		condition: 'incompatible',
+		condition: 'standard-incogruent',
 		trial_id: 'stim'
 	}
 }, {
 	image_url: 'images/hhhhh.png',
 	data: {
 		correct_response: head_right_keys,
-		condition: 'compatible',
+		condition: 'standard-congruent',
 		trial_id: 'stim'
 	}
 }, {
 	image_url: 'images/fffff.png',
 	data: {
 		correct_response: head_left_keys,
-		condition: 'compatible',
+		condition: 'oddball-congruent',
 		trial_id: 'stim'
 	}
 }];
