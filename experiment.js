@@ -54,32 +54,32 @@ var sumInstructTime = 0 //ms
 var instructTimeThresh = 0 ///in seconds
 
 // task specific variables
-var head_left_keys = [72,39]
-var head_right_keys = [70,37]
+var head_left_keys = [32,39]
+var head_right_keys = [13,37]
 var all_keys = [].concat(head_left_keys, head_right_keys)
 window.test_stimuli = [{
-	image_url: 'images/ffhff.png',
+	image_url: 'images/rrlrr.png',
 	data: {
 		correct_response: head_right_keys,
 		condition: 'oddball-incogruent',
 		trial_id: 'stim'
 	}
 }, {
-	image_url: 'images/hhfhh.png',
+	image_url: 'images/llrll.png',
 	data: {
 		correct_response: head_left_keys,
 		condition: 'standard-incogruent',
 		trial_id: 'stim'
 	}
 }, {
-	image_url: 'images/hhhhh.png',
+	image_url: 'images/lllll.png',
 	data: {
 		correct_response: head_right_keys,
 		condition: 'standard-congruent',
 		trial_id: 'stim'
 	}
 }, {
-	image_url: 'images/fffff.png',
+	image_url: 'images/rrrrr.png',
 	data: {
 		correct_response: head_left_keys,
 		condition: 'oddball-congruent',
@@ -132,7 +132,7 @@ var post_task_block = {
 var feedback_instruct_text =
 	'Welcome to the experiment. Press <strong>enter</strong> to begin.'
 var feedback_instruct_block = {
-	type: 'poldrack-text',
+	type: 'text',
 	cont_key: [13],
 	data: {
 		trial_id: "instruction"
@@ -143,7 +143,7 @@ var feedback_instruct_block = {
 };
 /// This ensures that the subject does not read through the instructions too quickly.  If they do it too quickly, then we will go over the loop again.
 var instructions_block = {
-	type: 'poldrack-instructions',
+	type: 'instructions',
 	pages: [
 		"<div class = centerbox><p class = block-text>In this experiment you will see five fish in a line. Some are facing left and some right. You need to feed the fish in the middle of the row and to do this you need to mark which way the fish is looking.  <br /> For instance, you might see <img class='in-line-img' src='images/fffff.png' height='20' width='100'/> or <img class='in-line-img' src='images/hhfhh.png' height='20' width='100'/>. Your task is to respond by pressing the key (or button) corresponding to the <strong>middle</strong> fish. So if you see <img class='in-line-img' src='images/ffhff.png' height='20' width='100'/> (middle fish looking left) you would press the 'left arrow' key or Yellow button. If the fish was looking right you would press the 'right arrow' key or Red buton. </p><p class = block-text>After each respond you will get feedback about whether you were correct or not. We will start with a short practice set.</p></div>"
 	],
@@ -160,7 +160,7 @@ var instruction_node = {
 	/* This function defines stopping criteria */
 	loop_function: function(data) {
 		for (i = 0; i < data.length; i++) {
-			if ((data[i].trial_type == 'poldrack-instructions') && (data[i].rt != -1)) {
+			if ((data[i].trial_type == 'instructions') && (data[i].rt != -1)) {
 				rt = data[i].rt
 				sumInstructTime = sumInstructTime + rt
 			}
@@ -177,7 +177,7 @@ var instruction_node = {
 }
 
 function compute_experiment_summary() {
-  var trials = jsPsych.data.getTrialsOfType('poldrack-categorize');
+  var trials = jsPsych.data.getTrialsOfType('categorize');
   var count = 0;
   var sum_rt = 0;
   var correct_trial_count = 0;
@@ -202,7 +202,7 @@ function compute_experiment_summary() {
 }
 
 var end_block = {
-	type: 'poldrack-text',
+	type: 'text',
 	timing_response: 180000,
 	data: {
 		trial_id: "end",
@@ -219,7 +219,7 @@ var end_block = {
 };
 
 var start_test_block = {
-	type: 'poldrack-text',
+	type: 'text',
 	data: {
 		trial_id: "test_intro"
 	},
@@ -230,7 +230,7 @@ var start_test_block = {
 };
 
 var fixation_block = {
-	type: 'poldrack-single-stim',
+	type: 'single-stim',
 	stimulus: '<div class = centerbox><div class = fixation>+</div></div>',
 	is_html: true,
 	data: {
@@ -250,7 +250,7 @@ for (i = 0; i < practice_len; i++) {
 	flanker_experiment.push(fixation_block)
   var practice_trial = practice_trials[i]
 	var practice_block = {
-		type: 'poldrack-categorize',
+		type: 'categorize',
 		stimulus: practice_trial.image,
 		key_answer: practice_trial.data.correct_response,
 		correct_text: '<div class = centerbox><div style="color:green"; class = center-text>Correct!</div></div>',
@@ -278,7 +278,7 @@ for (i = 0; i < exp_len; i++) {
   var test_trial = test_trials[i];
 	flanker_experiment.push(fixation_block)
 	var test_block = {
-		type: 'poldrack-categorize',
+		type: 'categorize',
 		stimulus: test_trial.image,
 		key_answer: test_trial.data.correct_response,
 		correct_text: '<div class = centerbox><div style="color:green"; class = center-text>Correct!</div></div>',
