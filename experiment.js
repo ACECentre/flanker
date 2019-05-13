@@ -132,7 +132,7 @@ var post_task_block = {
 var feedback_instruct_text =
 	'Welcome to the experiment. Press <strong>enter</strong> to begin.'
 var feedback_instruct_block = {
-	type: 'text',
+	type: 'poldrack-text',
 	cont_key: [13],
 	data: {
 		trial_id: "instruction"
@@ -160,7 +160,7 @@ var instruction_node = {
 	/* This function defines stopping criteria */
 	loop_function: function(data) {
 		for (i = 0; i < data.length; i++) {
-			if ((data[i].trial_type == 'instructions') && (data[i].rt != -1)) {
+			if ((data[i].trial_type == 'poldrack-instructions') && (data[i].rt != -1)) {
 				rt = data[i].rt
 				sumInstructTime = sumInstructTime + rt
 			}
@@ -177,7 +177,7 @@ var instruction_node = {
 }
 
 function compute_experiment_summary() {
-  var trials = jsPsych.data.getTrialsOfType('categorize');
+  var trials = jsPsych.data.getTrialsOfType('poldrack-categorize');
   var count = 0;
   var sum_rt = 0;
   var correct_trial_count = 0;
@@ -202,7 +202,7 @@ function compute_experiment_summary() {
 }
 
 var end_block = {
-	type: 'text',
+	type: 'poldrack-text',
 	timing_response: 180000,
 	data: {
 		trial_id: "end",
@@ -219,7 +219,7 @@ var end_block = {
 };
 
 var start_test_block = {
-	type: 'text',
+	type: 'poldrack-text',
 	data: {
 		trial_id: "test_intro"
 	},
@@ -230,7 +230,7 @@ var start_test_block = {
 };
 
 var fixation_block = {
-	type: 'single-stim',
+	type: 'poldrack-single-stim',
 	stimulus: '<div class = centerbox><div class = fixation>+</div></div>',
 	is_html: true,
 	data: {
@@ -250,7 +250,7 @@ for (i = 0; i < practice_len; i++) {
 	flanker_experiment.push(fixation_block)
   var practice_trial = practice_trials[i]
 	var practice_block = {
-		type: 'categorize',
+		type: 'poldrack-categorize',
 		stimulus: practice_trial.image,
 		key_answer: practice_trial.data.correct_response,
 		correct_text: '<div class = centerbox><div style="color:green"; class = center-text>Correct!</div></div>',
@@ -278,7 +278,7 @@ for (i = 0; i < exp_len; i++) {
   var test_trial = test_trials[i];
 	flanker_experiment.push(fixation_block)
 	var test_block = {
-		type: 'categorize',
+		type: 'poldrack-categorize',
 		stimulus: test_trial.image,
 		key_answer: test_trial.data.correct_response,
 		correct_text: '<div class = centerbox><div style="color:green"; class = center-text>Correct!</div></div>',
