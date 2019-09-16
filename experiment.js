@@ -143,7 +143,7 @@ var feedback_instruct_block = {
 };
 /// This ensures that the subject does not read through the instructions too quickly.  If they do it too quickly, then we will go over the loop again.
 var instructions_block = {
-	type: 'instructions',
+	type: 'poldrack-instructions',
 	pages: [
 		"<div class = centerbox><p class = block-text>In this experiment you will see five fish in a line. Some are facing left and some right. You need to feed the fish in the middle of the row and to do this you need to mark which way the fish is looking.  <br /> For instance, you might see <img class='in-line-img' src='images/fffff.png' height='20' width='100'/> or <img class='in-line-img' src='images/hhfhh.png' height='20' width='100'/>. Your task is to respond by pressing the key (or button) corresponding to the <strong>middle</strong> fish. So if you see <img class='in-line-img' src='images/ffhff.png' height='20' width='100'/> (middle fish looking left) you would press the 'left arrow' key or Yellow button. If the fish was looking right you would press the 'right arrow' key or Red buton. </p><p class = block-text>After each respond you will get feedback about whether you were correct or not. We will start with a short practice set.</p></div>"
 	],
