@@ -24,11 +24,11 @@ Hi Friend! This is an Experiment that is friendly for use in the [Experiment Fac
 - full_screen: True: yes false: no
 - condition: these terms relate to the images. There are 4 different conditions. See [here](https://github.com/AceCentre/flanker-children/blob/master/experiment.js#L60 ) (and the images [here](https://github.com/AceCentre/flanker-children/tree/master/images))
 
-   oddball-incogruent: https://github.com/AceCentre/flanker-children/blob/master/images/ffhff.png
+   oddball-incogruent ![oddballi](https://raw.githubusercontent.com/AceCentre/flanker-children/master/images/llrll.png)
 
-   standard-incogruent: https://github.com/AceCentre/flanker-children/blob/master/images/hhfhh.png
+   standard-incogruent ![standardi](https://raw.githubusercontent.com/AceCentre/flanker-children/master/images/rrlrr.png)
 
-   standard-congruent: https://github.com/AceCentre/flanker-children/blob/master/images/hhhhh.png
+   standard-congruent: ![standardc](https://raw.githubusercontent.com/AceCentre/flanker-children/master/images/rrrrr.png)
 
-   oddball-congruent: https://github.com/AceCentre/flanker-children/blob/master/images/fffff.png
+   oddball-congruent: ![oddballc](https://raw.githubusercontent.com/AceCentre/flanker-children/master/images/lllll.png)
 
