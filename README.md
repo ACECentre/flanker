@@ -15,20 +15,20 @@ Hi Friend! This is an Experiment that is friendly for use in the [Experiment Fac
 
 - rt: Reaction Time in ms
 - key_press: Which key was pressed. 37: Left. 39: Right. -1: No key was pressed.
-block_duration: the time period of the block. Note for our test its 1500 (ms) when the fish are shown. the fixation period in between is 500. 
-- trial_id: fixation: the bit where the cross is shown. stim: the bit where the user selects the fish direction (the test).  Note there is also instruction: (the instructional bit)
+- block_duration: the time period of the block. Note for our test its 1500 (ms) when the fish are shown. the fixation period in between is 500. 
+- trial_id: One of three things; "fixation": the bit where the cross is shown. "stim": the bit where the user selects the fish direction (the test) and "instruction": the instructional text
 - trial_type: poldrack-text/instructions (instructions), poldrack-single-stim = fixation and poldrack-categorize = the test - Trial_index: the number. It allows you to graph these if you so wish
 - time_elapsed: total time elapsed.
 - internal_node_id: not that useful. Its what the screen was in the software.
 - exp_id: all flanker (some exp js tests can have multiple tests in one output)
 - full_screen: True: yes false: no
 - condition: these terms relate to the images. There are 4 different conditions. See [here](https://github.com/AceCentre/flanker-children/blob/master/experiment.js#L60 ) (and the images [here](https://github.com/AceCentre/flanker-children/tree/master/images))
- 
-                oddball-incogruent: https://github.com/AceCentre/flanker-children/blob/master/images/ffhff.png
- 
-                standard-incogruent: https://github.com/AceCentre/flanker-children/blob/master/images/hhfhh.png
- 
-                standard-congruent: https://github.com/AceCentre/flanker-children/blob/master/images/hhhhh.png
- 
-                oddball-congruent: https://github.com/AceCentre/flanker-children/blob/master/images/fffff.png
- 
+
+   oddball-incogruent: https://github.com/AceCentre/flanker-children/blob/master/images/ffhff.png
+
+   standard-incogruent: https://github.com/AceCentre/flanker-children/blob/master/images/hhfhh.png
+
+   standard-congruent: https://github.com/AceCentre/flanker-children/blob/master/images/hhhhh.png
+
+   oddball-congruent: https://github.com/AceCentre/flanker-children/blob/master/images/fffff.png
+
