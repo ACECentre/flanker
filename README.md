@@ -22,7 +22,7 @@ Hi Friend! This is an Experiment that is friendly for use in the [Experiment Fac
 - internal_node_id: not that useful. Its what the screen was in the software.
 - exp_id: all flanker (some exp js tests can have multiple tests in one output)
 - full_screen: True: yes false: no
-- condition: these terms relate to the images. There are 4 different conditions. See [here](https://github.com/AceCentre/flanker-children/blob/master/experiment.js#L60 ) (and the images [here](https://github.com/AceCentre/flanker-children/tree/master/images))
+- condition: these terms relate to the images. There are 4 different conditions. See [here](https://github.com/AceCentre/flanker-children/blob/master/experiment.js#L60 ) (and the images [here](https://github.com/AceCentre/flanker-children/tree/master/images)). For more information on what all this *actually* means in regards to attention and interference [read this](http://dx.doi.org/10.1016/j.neuropsychologia.2014.10.002.
 
    oddball-incogruent ![oddballi](https://raw.githubusercontent.com/AceCentre/flanker-children/master/images/llrll.png)
 
